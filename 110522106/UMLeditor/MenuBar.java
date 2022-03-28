@@ -12,11 +12,11 @@ public class MenuBar extends JMenuBar{
 		JMenu menu;
 		JMenuItem mi;
 
-		/* --- File menu --- */
+		// --- File menu --- 
 		menu = new JMenu("File");
 		add(menu);
 
-		/* --- Edit menu --- */
+		// --- Edit menu --- 
 		menu = new JMenu("Edit");
 		add(menu);
 		
@@ -86,7 +86,6 @@ public class MenuBar extends JMenuBar{
 	
 	class GroupObjectListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//canvas.addGroup();
 			canvas.GroupShape();
 		}
 	}

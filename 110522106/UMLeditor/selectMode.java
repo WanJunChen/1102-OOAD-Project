@@ -2,7 +2,6 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-
 public class selectMode extends Mode {
 	private List<Shape> shapes;
 	private Point startP = null;
@@ -16,7 +15,7 @@ public class selectMode extends Mode {
 		// reset
 		canvas.reset();
 
-		/* find which basic object, record its reference */
+		// find which basic object, record its reference 
 		for (int i = shapes.size() - 1; i >= 0; i--) {
 			Shape shape = shapes.get(i);
 			judgeInside = shape.inside(e.getPoint());
@@ -31,7 +30,7 @@ public class selectMode extends Mode {
 	public void mouseDragged(MouseEvent e) {
 		int moveX = e.getX() - startP.x;
 		int moveY = e.getY() - startP.y;
-		/* object selected */
+		// object selected 
 		if (canvas.selectedObj != null) {
 			// move Line object
 			if (judgeInside == "insideLine") {
@@ -45,7 +44,7 @@ public class selectMode extends Mode {
 			startP.x = e.getX();
 			startP.y = e.getY();
 		}
-		/* group area selected */
+		// group area selected 
 		else {
 			if (e.getX() > startP.x)
 				canvas.SelectedArea.setBounds(startP.x, startP.y, Math.abs(moveX), Math.abs(moveY));
@@ -57,7 +56,7 @@ public class selectMode extends Mode {
 	}
 
 	public void mouseReleased(MouseEvent e) {
-		/* object select */
+		// object select 
 		if (canvas.selectedObj != null) {
 			// move Line object
 			if (judgeInside == "insideLine") {
@@ -66,7 +65,7 @@ public class selectMode extends Mode {
 				
 			}
 		}
-		/* group area selected */
+		// group area selected 
 		else {
 			canvas.SelectedArea.setSize(Math.abs(e.getX() - startP.x), Math.abs(e.getY() - startP.y));
 		}
@@ -79,7 +78,7 @@ public class selectMode extends Mode {
 			int portIndex;
 			String judgeInside = shape.inside(p);
 			if (judgeInside != null && judgeInside != "insideLine") {
-				/* if shape inside the group */
+				// if shape inside the group 
 				if (judgeInside == "insideGroup") {
 					shape = shape.getSelectedShape();
 					portIndex = Integer.parseInt(shape.inside(p));

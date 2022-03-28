@@ -9,7 +9,8 @@ public class UML extends JFrame{
     private Canvas canvas;
 
     //Constructor
-    public UML() {  
+    public UML() 
+    {  
         // canvas = Canvas.getInstance();
         toolbar = new ToolBar();
         menubar = new MenuBar();
@@ -22,7 +23,8 @@ public class UML extends JFrame{
     
     
 
-    public static void main(String[] args) { 
+    public static void main(String[] args) 
+    { 
         UML mainWindow = new UML();
         mainWindow.setTitle("UML Editor");
         mainWindow.setSize(800, 600);

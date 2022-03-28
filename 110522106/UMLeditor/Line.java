@@ -14,7 +14,7 @@ public abstract class Line extends Shape{
 	}
 	
 	public void show(Graphics g) {
-		g.setColor(new Color(255, 171, 175));
+		g.setColor(new Color(50, 171, 175));
 		this.draw(g);
 		g.setColor(Color.white);
 	}

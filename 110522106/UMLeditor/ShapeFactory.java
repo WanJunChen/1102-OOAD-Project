@@ -2,7 +2,6 @@ import java.awt.Point;
 
 public class ShapeFactory implements ShapeFactoryInterface{
 	public BasicObj createObj(String objType, Point p) {
-		// System.out.println("create Object");
 		if(objType.equals("Class")){
 			return new classObj(p.x, p.y);
 		}

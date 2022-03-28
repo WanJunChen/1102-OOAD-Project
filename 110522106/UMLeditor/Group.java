@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -64,7 +63,7 @@ public class Group extends Shape {
 	}
 	
 	public void setBounds() {
-		/* find most left and right objects, set group bounds */
+		// find most left and right objects, set group bounds 
 		Point upLeftP, bottomRightP;
 		int leftX = Integer.MAX_VALUE, rightX = Integer.MIN_VALUE;
 		int upY = Integer.MAX_VALUE, bottomY = Integer.MIN_VALUE;
