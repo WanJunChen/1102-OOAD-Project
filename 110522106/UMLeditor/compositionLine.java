@@ -1,20 +1,31 @@
 import java.awt.Graphics;
 
-public class compositionLine extends Line{
+public class compositionLine extends Line
+{
 	private int diamondW = 10, diamondH = 10;
-	public compositionLine(int x1, int y1, int x2, int y2) {
+	public compositionLine(int x1, int y1, int x2, int y2) 
+	{
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g) 
+	{
 		g.drawLine(x1, y1, x2, y2);
 		
-		int dx = x2 - x1, dy = y2 - y1;
-		double D = Math.sqrt(dx*dx + dy*dy);
-		double xm = D - diamondW, xn = xm, ym = diamondH, yn = -diamondH, x;
-		double sin = dy/D, cos = dx/D;
+		int dx = x2 - x1; // width 
+		int dy = y2 - y1; // height
+		double D = Math.sqrt(dx*dx + dy*dy);  //the square root, calculate the length of line
+
+		double xm = D - diamondW;
+		double xn = xm;
+		double ym = diamondH;
+		double yn = -diamondH;
+		double x;
+
+		double sin = dy/D;
+		double cos = dx/D;
 		
 		x = xm*cos - ym*sin + x1;
         ym = xm*sin + ym*cos + y1;

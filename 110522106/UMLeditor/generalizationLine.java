@@ -1,14 +1,17 @@
 import java.awt.Graphics;
 
-public class generalizationLine extends Line{
+public class generalizationLine extends Line
+{
 	private int arrowW = 10, arrowH = 10;
-	public generalizationLine(int x1, int y1, int x2, int y2) {
+	public generalizationLine(int x1, int y1, int x2, int y2) 
+	{
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g) 
+	{
 		g.drawLine(x1, y1, x2, y2);
 		
 		int dx = x2 - x1, dy = y2 - y1;

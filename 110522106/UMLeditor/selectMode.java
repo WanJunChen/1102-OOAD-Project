@@ -2,24 +2,27 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-public class selectMode extends Mode {
+public class selectMode extends Mode 
+{
 	private List<Shape> shapes;
 	private Point startP = null;
 	private String judgeInside = null;
 	private Line selectedLine = null;
 	
-	public void mousePressed(MouseEvent e) {
+	public void mousePressed(MouseEvent e) 
+	{
 		startP = e.getPoint();
 		shapes = canvas.getShapeList();
 
-		// reset
 		canvas.reset();
 
 		// find which basic object, record its reference 
-		for (int i = shapes.size() - 1; i >= 0; i--) {
+		for (int i = shapes.size() - 1; i >= 0; i--) 
+		{
 			Shape shape = shapes.get(i);
 			judgeInside = shape.inside(e.getPoint());
-			if (judgeInside != null) {
+			if (judgeInside != null) 
+			{
 				canvas.selectedObj = shape;
 				break;
 			}
@@ -27,25 +30,29 @@ public class selectMode extends Mode {
 		canvas.repaint();
 	}
 
-	public void mouseDragged(MouseEvent e) {
+	public void mouseDragged(MouseEvent e) 
+	{
 		int moveX = e.getX() - startP.x;
 		int moveY = e.getY() - startP.y;
 		// object selected 
-		if (canvas.selectedObj != null) {
+		if (canvas.selectedObj != null) 
+		{
 			// move Line object
-			if (judgeInside == "insideLine") {
+			if (judgeInside == "insideLine") 
+			{
 				selectedLine = (Line) canvas.selectedObj;
 				selectedLine.resetStartEnd(e.getPoint());
-				// canvas.tempLine = line;
 			}
-			else {
+			else 
+			{
 				canvas.selectedObj.resetLocation(moveX, moveY);
 			}
 			startP.x = e.getX();
 			startP.y = e.getY();
 		}
 		// group area selected 
-		else {
+		else 
+		{
 			if (e.getX() > startP.x)
 				canvas.SelectedArea.setBounds(startP.x, startP.y, Math.abs(moveX), Math.abs(moveY));
 			else
@@ -55,31 +62,39 @@ public class selectMode extends Mode {
 		canvas.repaint();
 	}
 
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased(MouseEvent e) 
+	{
 		// object select 
-		if (canvas.selectedObj != null) {
+		if (canvas.selectedObj != null) 
+		{
 			// move Line object
-			if (judgeInside == "insideLine") {
+			if (judgeInside == "insideLine") 
+			{
 				selectedLine = (Line) canvas.selectedObj;
 				reconnectLine(e.getPoint());
 				
 			}
 		}
 		// group area selected 
-		else {
+		else 
+		{
 			canvas.SelectedArea.setSize(Math.abs(e.getX() - startP.x), Math.abs(e.getY() - startP.y));
 		}
 		canvas.repaint();
 	}
 
-	private void reconnectLine(Point p) {
-		for (int i = 0; i < shapes.size(); i++) {
+	private void reconnectLine(Point p) 
+	{
+		for (int i = 0; i < shapes.size(); i++) 
+		{
 			Shape shape = shapes.get(i);
 			int portIndex;
 			String judgeInside = shape.inside(p);
-			if (judgeInside != null && judgeInside != "insideLine") {
+			if (judgeInside != null && judgeInside != "insideLine") 
+			{
 				// if shape inside the group 
-				if (judgeInside == "insideGroup") {
+				if (judgeInside == "insideGroup") 
+				{
 					shape = shape.getSelectedShape();
 					portIndex = Integer.parseInt(shape.inside(p));
 				}

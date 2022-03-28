@@ -1,8 +1,10 @@
 import java.awt.Graphics;
 
-public class classObj extends BasicObj{
+public class classObj extends BasicObj
+{
 	
-	public classObj(int x1, int y1) {
+	public classObj(int x1, int y1) 
+	{
 		this.width = 100;
 		this.height = 120;
 		this.x1 = x1;
@@ -11,7 +13,8 @@ public class classObj extends BasicObj{
 		this.y2 = y1 + height;
 		createPorts();  // each classObj has 4 ports
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g) 
+	{
 		g.drawRect(x1, y1, width, height);
 		
 		int portion = height / 3;

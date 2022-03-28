@@ -141,15 +141,18 @@ public class Canvas extends JPanel
 		// In the process of drawing a line 
 		// (when the mouse is not released),
 		// draw a line that follows the mouse
-		if (tempLine != null) {
+		if (tempLine != null) 
+		{
 			tempLine.draw(g);
 		}
 		// show ports when object is selected
-		if (this.selectedObj != null) {
+		if (this.selectedObj != null) 
+		{
 			selectedObj.show(g);
 		}
 		// paint area of group selection
-		if (!SelectedArea.isEmpty()) {
+		if (!SelectedArea.isEmpty()) 
+		{
 			int alpha = 85; // 33% transparent
 			g.setColor(new Color(37, 148, 216, alpha));
 			g.fillRect(SelectedArea.x, SelectedArea.y, SelectedArea.width, SelectedArea.height);

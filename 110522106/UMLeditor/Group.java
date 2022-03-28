@@ -5,19 +5,23 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Group extends Shape {
+public class Group extends Shape 
+{
 	private List<Shape> shapes = new ArrayList<Shape>();
 	private Rectangle bounds = new Rectangle();
 	private Shape selectedShape = null;
 
-	public void draw(Graphics g) { // show bounds
-		for (int i = 0; i < shapes.size(); i++) {
+	public void draw(Graphics g) 
+	{ // show bounds
+		for (int i = 0; i < shapes.size(); i++) 
+		{
 			Shape shape = shapes.get(i);
 			shape.draw(g);
 		}
 	}
 
-	public void show(Graphics g) {
+	public void show(Graphics g) 
+	{
 		int alpha = 85; // 33% transparent
 		int offset = 10;
 		g.setColor(new Color(110, 219, 181, alpha));
@@ -25,24 +29,30 @@ public class Group extends Shape {
 		g.setColor(new Color(110, 219, 181));
 		g.drawRect(bounds.x - offset, bounds.y - offset, bounds.width + offset * 2, bounds.height + offset * 2);
 		g.setColor(Color.white);
-		if (selectedShape != null) {
+		if (selectedShape != null) 
+		{
 			selectedShape.show(g);
 		}
 	}
 
-	public void resetLocation(int moveX, int moveY) {
-		for (int i = 0; i < shapes.size(); i++) {
+	public void resetLocation(int moveX, int moveY) 
+	{
+		for (int i = 0; i < shapes.size(); i++) 
+		{
 			Shape shape = shapes.get(i);
 			shape.resetLocation(moveX, moveY);
 		}
 		resetBounds(moveX, moveY);
 	}
 
-	public String inside(Point p) {
-		for (int i = 0; i < shapes.size(); i++) {
+	public String inside(Point p) 
+	{
+		for (int i = 0; i < shapes.size(); i++) 
+		{
 			Shape shape = shapes.get(i);
 			String judgeInside = shape.inside(p);
-			if (judgeInside != null) {
+			if (judgeInside != null) 
+			{
 				selectedShape = shape;
 				return "insideGroup";
 			}
@@ -50,36 +60,45 @@ public class Group extends Shape {
 		return null;
 	}
 
-	public void changeName(String name) {
+	public void changeName(String name) 
+	{
 		selectedShape.changeName(name);
 	}
 
-	public void resetSelectedShape() {
+	public void resetSelectedShape() 
+	{
 		selectedShape = null;
 	}
 	
-	public Shape getSelectedShape() {
+	public Shape getSelectedShape() 
+	{
 		return selectedShape;
 	}
 	
-	public void setBounds() {
+	public void setBounds() 
+	{
 		// find most left and right objects, set group bounds 
 		Point upLeftP, bottomRightP;
 		int leftX = Integer.MAX_VALUE, rightX = Integer.MIN_VALUE;
 		int upY = Integer.MAX_VALUE, bottomY = Integer.MIN_VALUE;
 
-		for (int i = 0; i < shapes.size(); i++) {
+		for (int i = 0; i < shapes.size(); i++) 
+		{
 			Shape shape = shapes.get(i);
-			if (shape.getX1() < leftX) {
+			if (shape.getX1() < leftX) 
+			{
 				leftX = shape.getX1();
 			}
-			if (shape.getX2() > rightX) {
+			if (shape.getX2() > rightX) 
+			{
 				rightX = shape.getX2();
 			}
-			if (shape.getY1() < upY) {
+			if (shape.getY1() < upY) 
+			{
 				upY = shape.getY1();
 			}
-			if (shape.getY2() > bottomY) {
+			if (shape.getY2() > bottomY) 
+			{
 				bottomY = shape.getY2();
 			}
 		}
@@ -95,7 +114,8 @@ public class Group extends Shape {
 		y2 = bounds.y + bounds.height;
 	}
 
-	protected void resetBounds(int moveX, int moveY) {
+	protected void resetBounds(int moveX, int moveY) 
+	{
 		bounds.setLocation(bounds.x + moveX, bounds.y + moveY);
 		x1 = bounds.x;
 		y1 = bounds.y;
@@ -103,11 +123,13 @@ public class Group extends Shape {
 		y2 = bounds.y + bounds.height;
 	}
 
-	public void addShapes(Shape shape) {
+	public void addShapes(Shape shape) 
+	{
 		shapes.add(shape);
 	}
 
-	public List<Shape> getShapes() {
+	public List<Shape> getShapes() 
+	{
 		return shapes;
 	}
 	

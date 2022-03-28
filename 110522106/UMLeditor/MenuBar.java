@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class MenuBar extends JMenuBar{
+public class MenuBar extends JMenuBar
+{
     private Canvas canvas;
-	public MenuBar() {
+	public MenuBar() 
+	{
 		canvas = Canvas.getInstance();   // Canvas is singleton 
 		
 		JMenu menu;
@@ -33,7 +35,8 @@ public class MenuBar extends JMenuBar{
 		mi.addActionListener(new UngroupObjectListener());
 	}
 	
-	private void changeNameForm() {
+	private void changeNameForm() 
+	{
 		JFrame inputTextFrame = new JFrame("Change Object Name");
 		inputTextFrame.setSize(400, 100);
 		inputTextFrame.getContentPane().setLayout(new GridLayout(0, 1));
@@ -61,16 +64,20 @@ public class MenuBar extends JMenuBar{
 		inputTextFrame.setVisible(true);
 		
 		
-		OKbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		OKbtn.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				canvas.changeName(Text.getText());
 				inputTextFrame.dispose();
 				
 			}
 		});
 		
-		cancelbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		cancelbtn.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 				inputTextFrame.dispose();
 			}
 		});
@@ -78,20 +85,26 @@ public class MenuBar extends JMenuBar{
 		
 	}
 	
-	class UngroupObjectListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
+	class UngroupObjectListener implements ActionListener 
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
 			canvas.removeGroup();
 		}
 	}
 	
-	class GroupObjectListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
+	class GroupObjectListener implements ActionListener 
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
 			canvas.GroupShape();
 		}
 	}
 	
-	class ChangeNameListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
+	class ChangeNameListener implements ActionListener 
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
 			changeNameForm();
 		}
 	}

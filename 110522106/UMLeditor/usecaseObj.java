@@ -1,7 +1,9 @@
 import java.awt.Graphics;
 
-public class usecaseObj extends BasicObj{
-	public usecaseObj(int x1, int y1) {
+public class usecaseObj extends BasicObj
+{
+	public usecaseObj(int x1, int y1) 
+	{
 		this.width = 120;
 		this.height = 90;
 		this.x1 = x1;
@@ -10,7 +12,8 @@ public class usecaseObj extends BasicObj{
 		this.y2 = y1 + height;
 		createPorts();
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g)
+	{
 		g.drawOval(x1, y1, width, height);
 		
 		// find the width for the specified string.
