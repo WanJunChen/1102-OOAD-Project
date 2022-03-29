@@ -14,10 +14,18 @@ public class generalizationLine extends Line
 	{
 		g.drawLine(x1, y1, x2, y2);
 		
-		int dx = x2 - x1, dy = y2 - y1;
-		double D = Math.sqrt(dx*dx + dy*dy);
-		double xm = D - arrowW, xn = xm, ym = arrowH, yn = -arrowH, x;
-		double sin = dy/D, cos = dx/D;
+		int dx = x2 - x1; // width 
+		int dy = y2 - y1; // height
+		double D = Math.sqrt(dx*dx + dy*dy);  //the square root, calculate the length of line
+
+		double xm = D - arrowW;
+		double xn = xm;
+		double ym = arrowH;
+		double yn = -arrowH;
+		double x;
+
+		double sin = dy/D;
+		double cos = dx/D;
 		
 		x = xm*cos - ym*sin + x1;
         ym = xm*sin + ym*cos + y1;
@@ -29,7 +37,7 @@ public class generalizationLine extends Line
 
         int[] xpoints = {x2, (int) xm, (int) xn};
         int[] ypoints = {y2, (int) ym, (int) yn};
-
+		
         g.fillPolygon(xpoints, ypoints, 3);
 	}
 }

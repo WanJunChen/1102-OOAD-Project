@@ -49,7 +49,7 @@ public class createLineMode extends Mode
 				canvas.addShape(line);
 
 				// add relative ports to line 
-				line.setPorts(shape_1.getPort(portIndex_1), shape_2.getPort(portIndex_2));
+				line.set4Ports(shape_1.getPort(portIndex_1), shape_2.getPort(portIndex_2));
 
 				// add line to relative port of two basic object 
 				shape_1.getPort(portIndex_1).addLine(line);

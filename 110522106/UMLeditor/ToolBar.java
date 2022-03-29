@@ -21,11 +21,11 @@ public class ToolBar extends JToolBar
         add(Btn);
 
         imageIcon = new ImageIcon("../img/association line.png");
-        Btn = new ToolBtn("select", setBtnImgSize(imageIcon), new createLineMode("AssociateLine"));
+        Btn = new ToolBtn("select", setBtnImgSize(imageIcon), new createLineMode("AssociationLine"));
         add(Btn);
 
         imageIcon = new ImageIcon("../img/generalization line.png");
-        Btn = new ToolBtn("select", setBtnImgSize(imageIcon), new createLineMode("GeneralLine"));
+        Btn = new ToolBtn("select", setBtnImgSize(imageIcon), new createLineMode("GeneralizationLine"));
         add(Btn);
 
         imageIcon = new ImageIcon("../img/composition line.png");

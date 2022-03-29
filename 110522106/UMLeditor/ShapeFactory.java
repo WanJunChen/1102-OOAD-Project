@@ -15,11 +15,11 @@ public class ShapeFactory implements ShapeFactoryInterface
 
 	public Line createLine(String lineType, Point startP, Point endP) 
 	{
-		if(lineType.equals("AssociateLine"))
+		if(lineType.equals("AssociationLine"))
 		{
 			return new associationLine(startP.x, startP.y, endP.x, endP.y);
 		}
-		else if(lineType.equals("GeneralLine"))
+		else if(lineType.equals("GeneralizationLine"))
 		{
 			return new generalizationLine(startP.x, startP.y, endP.x, endP.y);
 		}

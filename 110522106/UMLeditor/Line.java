@@ -9,7 +9,7 @@ public abstract class Line extends Shape
 	public abstract void draw(Graphics g);
 	private String selectedFlag = null;
 	
-	public void setPorts(Port port_1, Port port_2) 
+	public void set4Ports(Port port_1, Port port_2) 
 	{
 		this.ports[0] = port_1;
 		this.ports[1] = port_2;

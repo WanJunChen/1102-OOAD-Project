@@ -6,7 +6,7 @@ public abstract class Shape
 	protected int x1, y1, x2, y2;
 	public boolean group_selected = false;
 	
-	public abstract void draw(Graphics g);
+	public abstract void draw(Graphics g);  // original draw
 	
 	public int getX1()
 	{
