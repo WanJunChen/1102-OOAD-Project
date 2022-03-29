@@ -1,6 +1,6 @@
 import java.awt.Point;
 
-public class ShapeFactory implements ShapeFactoryInterface
+public class ShapeCreator implements ShapeCreatorInterface
 {
 	public BasicObj createObj(String objType, Point p) 
 	{

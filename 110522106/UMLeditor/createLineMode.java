@@ -5,7 +5,7 @@ import java.util.List;
 public class createLineMode extends Mode 
 {
 	private String lineType = null;
-	private ShapeFactoryInterface factory = new ShapeFactory();
+	private ShapeCreatorInterface factory = new ShapeCreator();
 	private Point startP = null;
 	private List<Shape> shapes;
 	private int portIndex_1 = -1, portIndex_2 = -1;

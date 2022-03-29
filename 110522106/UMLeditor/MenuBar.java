@@ -18,6 +18,10 @@ public class MenuBar extends JMenuBar
 		menu = new JMenu("File");
 		add(menu);
 
+		mi = new JMenuItem("Clean Canvas");
+		menu.add(mi);
+		mi.addActionListener(new CleanListener());
+
 		// --- Edit menu --- 
 		menu = new JMenu("Edit");
 		add(menu);
@@ -85,11 +89,19 @@ public class MenuBar extends JMenuBar
 		
 	}
 	
-	class UngroupObjectListener implements ActionListener 
+	class CleanListener implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent e) 
 		{
-			canvas.removeGroup();
+			canvas.CleanShape();
+		}
+	}
+
+	class ChangeNameListener implements ActionListener 
+	{
+		public void actionPerformed(ActionEvent e) 
+		{
+			changeNameForm();
 		}
 	}
 	
@@ -100,12 +112,13 @@ public class MenuBar extends JMenuBar
 			canvas.GroupShape();
 		}
 	}
-	
-	class ChangeNameListener implements ActionListener 
+
+	class UngroupObjectListener implements ActionListener 
 	{
 		public void actionPerformed(ActionEvent e) 
 		{
-			changeNameForm();
+			canvas.removeGroup();
 		}
 	}
+	
 }

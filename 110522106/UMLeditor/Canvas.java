@@ -63,7 +63,11 @@ public class Canvas extends JPanel
 	{
 		return this.shapes;
 	}
-
+	public void CleanShape()
+	{
+		shapes.clear();
+		repaint();
+	}
 	public void GroupShape() 
 	{
 		Group group = new Group();

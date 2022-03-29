@@ -8,6 +8,7 @@ public class Port extends Rectangle
 
 	public void setPort(int center_x, int center_y, int offset) 
 	{
+		// offset is half of the port width
 		int x = center_x - offset;
 		int y = center_y - offset;
 		int w = offset * 2;

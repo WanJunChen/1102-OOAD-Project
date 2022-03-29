@@ -3,7 +3,7 @@ import java.awt.event.MouseEvent;
 public class createObjMode extends Mode
 {
 	private String objType = null;
-	private ShapeFactoryInterface factory = new ShapeFactory();
+	private ShapeCreatorInterface factory = new ShapeCreator();
 	public createObjMode(String objType) 
 	{  // objType is "Class" or "Use Case"
 		this.objType = objType;
