@@ -66,6 +66,7 @@ public class Canvas extends JPanel
 	public void CleanShape()
 	{
 		shapes.clear();
+		this.selectedObj = null; // clean port display
 		repaint();
 	}
 	public void GroupShape() 
