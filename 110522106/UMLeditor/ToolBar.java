@@ -68,7 +68,7 @@ public class ToolBar extends JToolBar
 			}
 		 }
     }
-    public ImageIcon setBtnImgSize(ImageIcon imageIcon)
+    private ImageIcon setBtnImgSize(ImageIcon imageIcon)
     {
         Image image = imageIcon.getImage().getScaledInstance(70, 56,  java.awt.Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(image);

@@ -6,8 +6,9 @@ import java.awt.geom.Line2D;
 public abstract class Line extends Shape
 {
 	protected Port[] ports = new Port[2];
-	public abstract void draw(Graphics g);
 	private String selectedFlag = null;
+	
+	public abstract void draw(Graphics g);
 	
 	public void set4Ports(Port port_1, Port port_2) 
 	{
