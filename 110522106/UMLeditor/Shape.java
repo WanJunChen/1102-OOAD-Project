@@ -8,7 +8,7 @@ public abstract class Shape
 	
 	public abstract void draw(Graphics g);  // original draw
 	
-	public int getX1()
+	public int getX1()  //for group
 	{
 		return x1;
 	}
