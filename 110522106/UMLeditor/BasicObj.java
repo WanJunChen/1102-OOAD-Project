@@ -26,7 +26,7 @@ public abstract class BasicObj extends Shape
 		Point center = new Point();
 		center.x = (x1 + x2) / 2;
 		center.y = (y1 + y2) / 2;
-		Point[] points = { new Point(x1, y1), new Point(x2, y1), new Point(x2, y2), new Point(x1, y2) }; //左上、右上、右下、左下
+		Point[] points = { new Point(x1, y1), new Point(x2, y1), new Point(x2, y2), new Point(x1, y2) };
 		
 		for (int i = 0; i < points.length; i++) 
 		{
