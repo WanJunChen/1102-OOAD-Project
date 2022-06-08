@@ -34,7 +34,7 @@ public class Canvas extends JPanel
 		return instance;
 	}
 
-	public void setCurrentMode() 
+	public void setCurrentMode()
 	{
 		removeMouseListener((MouseListener) listener);
 		removeMouseMotionListener((MouseMotionListener) listener);

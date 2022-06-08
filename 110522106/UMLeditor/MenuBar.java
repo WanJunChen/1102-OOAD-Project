@@ -49,7 +49,7 @@ public class MenuBar extends JMenuBar
 		panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
-		JTextField Text =  new JTextField("Object Name");
+		JTextField Text = new JTextField("Object Name");
 		panel.add(Text);
 		inputTextFrame.getContentPane().add(panel);
 		
